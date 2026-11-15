@@ -1,0 +1,156 @@
+.hero {
+  position: relative;
+  overflow: hidden;
+  background: var(--light-gray-3);
+}
+
+.hero__conteudo {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 40px;
+  min-height: 600px;
+  padding-top: 48px;
+  padding-bottom: 72px;
+  animation: hero-entrada 0.5s ease;
+}
+
+@keyframes hero-entrada {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.hero__chamada {
+  margin: 0 0 16px;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--warning);
+}
+
+.hero h1 {
+  margin: 0 0 24px;
+  max-width: 560px;
+  font-size: 64px;
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--dark-gray);
+}
+
+.hero__descricao {
+  margin: 0 0 40px;
+  max-width: 480px;
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--dark-gray-2);
+}
+
+.hero__botao {
+  display: inline-grid;
+  place-items: center;
+  width: 220px;
+  height: 48px;
+  border-radius: 8px;
+  background: var(--primary);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--white);
+  text-decoration: none;
+}
+
+.hero__botao:hover {
+  background: var(--tertiary);
+}
+
+.hero__imagem {
+  display: flex;
+  justify-content: center;
+}
+
+/* a foto tem fundo branco, o multiply deixa só o cinza da seção aparecer */
+.hero__imagem img {
+  width: 100%;
+  max-width: 640px;
+  mix-blend-mode: multiply;
+}
+
+.hero__pontilhado {
+  position: absolute;
+  top: 28px;
+  right: 1.5%;
+  width: 110px;
+  height: 110px;
+  background-image: radial-gradient(circle, var(--warning) 2px, transparent 2.5px);
+  background-size: 18px 18px;
+  opacity: 0.6;
+}
+
+.hero__indicadores {
+  position: absolute;
+  bottom: 28px;
+  left: 50%;
+  display: flex;
+  gap: 12px;
+  transform: translateX(-50%);
+}
+
+.hero__indicadores button {
+  width: 10px;
+  height: 10px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: var(--light-gray-2);
+}
+
+.hero__indicadores button.ativo {
+  background: var(--primary);
+}
+
+@media (max-width: 900px) {
+  .hero__conteudo {
+    grid-template-columns: minmax(0, 1fr);
+    min-height: 0;
+    padding-top: 32px;
+    padding-bottom: 72px;
+    text-align: center;
+  }
+
+  /* no celular a foto vem primeiro, como no layout do Figma */
+  .hero__imagem {
+    order: -1;
+  }
+
+  .hero__imagem img {
+    max-width: 420px;
+  }
+
+  .hero h1 {
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 36px;
+  }
+
+  .hero__descricao {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 28px;
+    font-size: 16px;
+  }
+
+  .hero__botao {
+    width: 100%;
+  }
+
+  .hero__pontilhado {
+    top: 24px;
+    width: 90px;
+    height: 90px;
+  }
+}

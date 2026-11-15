@@ -1,0 +1,105 @@
+.buy-box {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.buy-box h1 {
+  margin: 0;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--dark-gray);
+}
+
+.buy-box__referencia {
+  margin: 0;
+  font-size: 12px;
+  color: var(--dark-gray-3);
+}
+
+.buy-box__avaliacao {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.buy-box__estrelas {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 4px;
+  background: var(--warning);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--white);
+}
+
+.buy-box__total {
+  font-size: 14px;
+  color: var(--light-gray);
+}
+
+.buy-box__precos {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+}
+
+.buy-box__preco {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--dark-gray-2);
+}
+
+.buy-box__preco-antigo {
+  font-size: 16px;
+  color: var(--light-gray-2);
+  text-decoration: line-through;
+}
+
+.buy-box__descricao {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--dark-gray-2);
+}
+
+.buy-box__descricao p {
+  margin: 0;
+}
+
+.buy-box__rotulo {
+  margin-bottom: 4px !important;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--light-gray);
+}
+
+.buy-box__comprar {
+  align-self: flex-start;
+  width: 220px;
+  height: 48px;
+  margin-top: 8px;
+  border: 0;
+  border-radius: 8px;
+  background: var(--warning);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--white);
+}
+
+.buy-box__comprar:hover {
+  filter: brightness(0.95);
+}
+
+@media (max-width: 640px) {
+  .buy-box h1 {
+    font-size: 26px;
+  }
+
+  .buy-box__comprar {
+    width: 100%;
+    align-self: stretch;
+  }
+}
