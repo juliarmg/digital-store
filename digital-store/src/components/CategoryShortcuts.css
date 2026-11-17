@@ -1,0 +1,66 @@
+.category-shortcuts {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px 48px;
+}
+
+.category-shortcuts button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  width: 100px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--light-gray);
+}
+
+.category-shortcuts__circulo {
+  display: grid;
+  place-items: center;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: var(--white);
+  transition: box-shadow 0.2s ease, color 0.2s ease;
+}
+
+.category-shortcuts button:hover .category-shortcuts__circulo {
+  box-shadow: 0 4px 16px rgba(80, 70, 140, 0.12);
+}
+
+.category-shortcuts button.ativa {
+  color: var(--primary);
+}
+
+.category-shortcuts button.ativa .category-shortcuts__circulo {
+  box-shadow: 0 4px 16px rgba(80, 70, 140, 0.16);
+}
+
+.category-shortcuts__nome {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--dark-gray-2);
+}
+
+@media (max-width: 640px) {
+  .category-shortcuts {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    gap: 20px;
+    overflow-x: auto;
+    padding-bottom: 8px;
+  }
+
+  .category-shortcuts button {
+    flex: 0 0 76px;
+    width: 76px;
+  }
+
+  .category-shortcuts__circulo {
+    width: 76px;
+    height: 76px;
+  }
+}

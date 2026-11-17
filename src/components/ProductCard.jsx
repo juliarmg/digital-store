@@ -10,7 +10,7 @@ export default function ProductCard({ id, image, name, price, priceDiscount, tip
     <Link to={`/product/${id}`} className="product-card">
       <div className="product-card__imagem">
         {temDesconto && <span className="product-card__selo">{percentual}% OFF</span>}
-        <img src={image} alt={name} loading="lazy" />
+        <img src={image} alt={name} width="292" height="321" loading="lazy" />
       </div>
       <p className="product-card__tipo">{tipo}</p>
       <h3>{name}</h3>

@@ -75,7 +75,7 @@ export default function ProductViewPage() {
         </div>
 
         <Section
-          title="Produtos relacionados"
+          title="Produtos recomendados"
           titleAlign="left"
           link={{ text: "Ver todos", href: "/products" }}
         >

@@ -11,9 +11,13 @@
   padding-bottom: 56px;
 }
 
+/* a foto é larga, então o círculo recorta o centro dela, como a imagem redonda do Figma */
 .special-offer__conteudo img {
   width: 100%;
-  max-width: 620px;
+  max-width: 460px;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 50%;
   justify-self: center;
 }
 

@@ -14,6 +14,7 @@ export default function Gallery({
   height = 681,
   radius = "0px",
   showThumbs = false,
+  showDots = false,
   className = "",
 }) {
   const [atual, setAtual] = useState(0);
@@ -59,6 +60,21 @@ export default function Gallery({
         >
           <img src={arrowRight} alt="" />
         </button>
+
+        {showDots && (
+          <div className="gallery__bolinhas">
+            {images.map((imagem, indice) => (
+              <button
+                key={imagem.src}
+                type="button"
+                className={indice === atual ? "ativa" : undefined}
+                onClick={() => setAtual(indice)}
+                aria-label={`Ir para a imagem ${indice + 1}`}
+                aria-current={indice === atual}
+              />
+            ))}
+          </div>
+        )}
       </div>
 
       {showThumbs && (

@@ -1,0 +1,56 @@
+.collection-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.collection-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px;
+  background: #d7e4f2;
+}
+
+.collection-card img {
+  width: 100%;
+  height: auto;
+}
+
+.collection-card__selo {
+  position: absolute;
+  top: 6%;
+  left: 7.4%;
+  padding: 5px 14px;
+  border-radius: 100px;
+  background: var(--lime);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--dark-gray-2);
+}
+
+.collection-card__botao {
+  position: absolute;
+  left: 7.4%;
+  bottom: 9%;
+  display: grid;
+  place-items: center;
+  width: 36%;
+  max-width: 146px;
+  height: 40px;
+  border-radius: 4px;
+  background: var(--light-gray-3);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.collection-card__botao:hover {
+  background: var(--white);
+}
+
+@media (max-width: 900px) {
+  .collection-cards {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

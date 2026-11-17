@@ -1,0 +1,181 @@
+const descricaoPadrao =
+  "Tênis confortável para o dia a dia, com cabedal respirável, solado de borracha antiderrapante e palmilha acolchoada. Combina com looks casuais e também com treinos leves.";
+
+const tamanhos = ["39", "40", "41", "42", "43"];
+const cores = ["#6FEEFF", "#FF6969", "#5E5E5E", "#6D70B7"];
+
+// O repositório da Digital College traz 5 fotos de card (292x321) e 5 fotos de galeria (700x570).
+// Os produtos se revezam entre as fotos de card; a galeria da página de produto é a mesma para todos.
+const galeria = [1, 2, 3, 4, 5].map((n) => ({ src: `/produc-image-${n}.jpeg` }));
+
+let contador = 0;
+
+function criarProduto(dados) {
+  const foto = (contador % 5) + 1;
+  contador += 1;
+
+  return {
+    type: "Tênis",
+    description: descricaoPadrao,
+    sizes: tamanhos,
+    colors: cores,
+    image: `/product-thumb-${foto}.jpeg`,
+    images: galeria,
+    ...dados,
+  };
+}
+
+const products = [
+  criarProduto({
+    id: 1,
+    name: "K-Swiss V8 - Masculino",
+    price: 200,
+    priceDiscount: 100,
+    brand: "K-Swiss",
+    category: "Casual",
+    gender: "Masculino",
+    condition: "Novo",
+    reference: "38416711",
+    stars: 4.7,
+    rating: 90,
+  }),
+  criarProduto({
+    id: 2,
+    name: "Tênis Nike Revolution 6 Next Nature Masculino",
+    price: 219,
+    brand: "Nike",
+    category: "Casual",
+    gender: "Masculino",
+    condition: "Novo",
+    reference: "38416711",
+    stars: 4.7,
+    rating: 90,
+  }),
+  criarProduto({
+    id: 3,
+    name: "Adidas Ultraboost Light",
+    price: 899.9,
+    priceDiscount: 719.9,
+    brand: "Adidas",
+    category: "Corrida",
+    gender: "Feminino",
+    condition: "Novo",
+    reference: "55172034",
+    stars: 4.8,
+    rating: 134,
+  }),
+  criarProduto({
+    id: 4,
+    name: "Nike Air Zoom Pegasus 39",
+    price: 549.9,
+    brand: "Nike",
+    category: "Corrida",
+    gender: "Unissex",
+    condition: "Novo",
+    reference: "28105502",
+    stars: 4.9,
+    rating: 212,
+  }),
+  criarProduto({
+    id: 5,
+    name: "Puma Suede Classic XXI",
+    price: 399.9,
+    brand: "Puma",
+    category: "Casual",
+    gender: "Masculino",
+    condition: "Usado",
+    reference: "61820937",
+    stars: 4.3,
+    rating: 58,
+  }),
+  criarProduto({
+    id: 6,
+    name: "Converse Chuck Taylor All Star",
+    price: 299.9,
+    priceDiscount: 249.9,
+    brand: "Converse",
+    category: "Casual",
+    gender: "Unissex",
+    condition: "Novo",
+    reference: "10492856",
+    stars: 4.6,
+    rating: 301,
+  }),
+  criarProduto({
+    id: 7,
+    name: "K-Swiss Classic 88",
+    price: 279.9,
+    brand: "K-Swiss",
+    category: "Casual",
+    gender: "Feminino",
+    condition: "Usado",
+    reference: "92710365",
+    stars: 4.1,
+    rating: 34,
+  }),
+  criarProduto({
+    id: 8,
+    name: "Nike Revolution 6 - Feminino",
+    price: 329.9,
+    brand: "Nike",
+    category: "Esporte e lazer",
+    gender: "Feminino",
+    condition: "Novo",
+    reference: "73049218",
+    stars: 4.4,
+    rating: 77,
+  }),
+  criarProduto({
+    id: 9,
+    name: "Adidas Grand Court Base",
+    price: 349.9,
+    priceDiscount: 279.9,
+    brand: "Adidas",
+    category: "Esporte e lazer",
+    gender: "Masculino",
+    condition: "Novo",
+    reference: "40293817",
+    stars: 4.5,
+    rating: 96,
+  }),
+  criarProduto({
+    id: 10,
+    name: "Puma Anzarun Lite",
+    price: 299.9,
+    priceDiscount: 199.9,
+    brand: "Puma",
+    category: "Utilitário",
+    gender: "Unissex",
+    condition: "Novo",
+    reference: "18365024",
+    stars: 4.2,
+    rating: 61,
+  }),
+  criarProduto({
+    id: 11,
+    name: "Converse Run Star Hike",
+    price: 599.9,
+    brand: "Converse",
+    category: "Utilitário",
+    gender: "Feminino",
+    condition: "Novo",
+    reference: "87450129",
+    stars: 4.7,
+    rating: 45,
+  }),
+  criarProduto({
+    id: 12,
+    name: "Nike Court Vision Low",
+    price: 429.9,
+    priceDiscount: 359.9,
+    brand: "Nike",
+    category: "Esporte e lazer",
+    gender: "Masculino",
+    condition: "Usado",
+    reference: "26718493",
+    stars: 4.0,
+    rating: 29,
+  }),
+];
+
+export default products;

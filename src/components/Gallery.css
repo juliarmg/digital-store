@@ -32,11 +32,11 @@
   height: 44px;
   border: 0;
   border-radius: 50%;
-  background: transparent;
+  background: rgba(255, 255, 255, 0.75);
 }
 
 .gallery__seta:hover:not(:disabled) {
-  background: rgba(255, 255, 255, 0.7);
+  background: var(--white);
 }
 
 .gallery__seta:disabled {
@@ -55,6 +55,28 @@
 
 .gallery__seta--direita {
   right: 24px;
+}
+
+.gallery__bolinhas {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  display: flex;
+  gap: 10px;
+  transform: translateX(-50%);
+}
+
+.gallery__bolinhas button {
+  width: 10px;
+  height: 10px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.gallery__bolinhas button.ativa {
+  background: var(--primary);
 }
 
 .gallery__miniaturas {

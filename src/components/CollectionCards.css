@@ -5,48 +5,21 @@
 }
 
 .collection-card {
-  position: relative;
+  display: block;
   overflow: hidden;
   border-radius: 4px;
-  background: #d7e4f2;
 }
 
 .collection-card img {
+  display: block;
   width: 100%;
   height: auto;
-}
-
-.collection-card__selo {
-  position: absolute;
-  top: 6%;
-  left: 7.4%;
-  padding: 5px 14px;
-  border-radius: 100px;
-  background: var(--lime);
-  font-size: 12px;
-  font-weight: 700;
-  color: var(--dark-gray-2);
-}
-
-.collection-card__botao {
-  position: absolute;
-  left: 7.4%;
-  bottom: 9%;
-  display: grid;
-  place-items: center;
-  width: 36%;
-  max-width: 146px;
-  height: 40px;
   border-radius: 4px;
-  background: var(--light-gray-3);
-  font-size: 14px;
-  font-weight: 700;
-  color: var(--primary);
-  text-decoration: none;
+  transition: transform 0.25s ease;
 }
 
-.collection-card__botao:hover {
-  background: var(--white);
+.collection-card:hover img {
+  transform: scale(1.03);
 }
 
 @media (max-width: 900px) {

@@ -1,0 +1,47 @@
+.section {
+  width: 100%;
+}
+
+.section__cabecalho {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.section__cabecalho h2 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--dark-gray-2);
+}
+
+.section__cabecalho--center {
+  position: relative;
+  justify-content: center;
+}
+
+.section__cabecalho a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.section__cabecalho a:hover {
+  text-decoration: underline;
+}
+
+/* no título centralizado o link continua à direita sem empurrar o título */
+.section__cabecalho--center a {
+  position: absolute;
+  right: 0;
+}
+
+@media (max-width: 640px) {
+  .section__cabecalho h2 {
+    font-size: 20px;
+  }
+}

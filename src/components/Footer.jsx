@@ -66,7 +66,7 @@ export default function Footer() {
         </div>
 
         <hr />
-        <p className="footer__copy">&copy; {new Date().getFullYear()} Digital College</p>
+        <p className="footer__copy">&copy; {new Date().getFullYear()} Digital Store</p>
       </div>
     </footer>
   );

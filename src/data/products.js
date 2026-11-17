@@ -4,26 +4,23 @@ const descricaoPadrao =
 const tamanhos = ["39", "40", "41", "42", "43"];
 const cores = ["#6FEEFF", "#FF6969", "#5E5E5E", "#6D70B7"];
 
-// Só temos duas fotos de tênis tiradas do Figma, então os produtos se revezam entre elas.
-// Para usar foto própria, troque "foto" por "image" (e "images" para a galeria) em qualquer produto.
-const fotos = {
-  nike: {
-    image: "/produtos/nike-revolution.png",
-    images: [1, 2, 3, 4, 5].map((n) => ({ src: `/produtos/galeria/nike-${n}.jpg` })),
-  },
-  kswiss: {
-    image: "/produtos/kswiss-v8.png",
-    images: [1, 2, 3, 4, 5].map((n) => ({ src: `/produtos/galeria/kswiss-${n}.jpg` })),
-  },
-};
+// O repositório da Digital College traz 5 fotos de card (292x321) e 5 fotos de galeria (700x570).
+// Os produtos se revezam entre as fotos de card; a galeria da página de produto é a mesma para todos.
+const galeria = [1, 2, 3, 4, 5].map((n) => ({ src: `/produc-image-${n}.jpeg` }));
 
-function criarProduto({ foto, ...dados }) {
+let contador = 0;
+
+function criarProduto(dados) {
+  const foto = (contador % 5) + 1;
+  contador += 1;
+
   return {
     type: "Tênis",
     description: descricaoPadrao,
     sizes: tamanhos,
     colors: cores,
-    ...fotos[foto],
+    image: `/product-thumb-${foto}.jpeg`,
+    images: galeria,
     ...dados,
   };
 }
@@ -31,7 +28,6 @@ function criarProduto({ foto, ...dados }) {
 const products = [
   criarProduto({
     id: 1,
-    foto: "kswiss",
     name: "K-Swiss V8 - Masculino",
     price: 200,
     priceDiscount: 100,
@@ -45,7 +41,6 @@ const products = [
   }),
   criarProduto({
     id: 2,
-    foto: "nike",
     name: "Tênis Nike Revolution 6 Next Nature Masculino",
     price: 219,
     brand: "Nike",
@@ -58,7 +53,6 @@ const products = [
   }),
   criarProduto({
     id: 3,
-    foto: "kswiss",
     name: "Adidas Ultraboost Light",
     price: 899.9,
     priceDiscount: 719.9,
@@ -72,7 +66,6 @@ const products = [
   }),
   criarProduto({
     id: 4,
-    foto: "nike",
     name: "Nike Air Zoom Pegasus 39",
     price: 549.9,
     brand: "Nike",
@@ -85,7 +78,6 @@ const products = [
   }),
   criarProduto({
     id: 5,
-    foto: "kswiss",
     name: "Puma Suede Classic XXI",
     price: 399.9,
     brand: "Puma",
@@ -98,7 +90,6 @@ const products = [
   }),
   criarProduto({
     id: 6,
-    foto: "nike",
     name: "Converse Chuck Taylor All Star",
     price: 299.9,
     priceDiscount: 249.9,
@@ -112,7 +103,6 @@ const products = [
   }),
   criarProduto({
     id: 7,
-    foto: "kswiss",
     name: "K-Swiss Classic 88",
     price: 279.9,
     brand: "K-Swiss",
@@ -125,7 +115,6 @@ const products = [
   }),
   criarProduto({
     id: 8,
-    foto: "nike",
     name: "Nike Revolution 6 - Feminino",
     price: 329.9,
     brand: "Nike",
@@ -138,7 +127,6 @@ const products = [
   }),
   criarProduto({
     id: 9,
-    foto: "kswiss",
     name: "Adidas Grand Court Base",
     price: 349.9,
     priceDiscount: 279.9,
@@ -152,7 +140,6 @@ const products = [
   }),
   criarProduto({
     id: 10,
-    foto: "nike",
     name: "Puma Anzarun Lite",
     price: 299.9,
     priceDiscount: 199.9,
@@ -166,7 +153,6 @@ const products = [
   }),
   criarProduto({
     id: 11,
-    foto: "kswiss",
     name: "Converse Run Star Hike",
     price: 599.9,
     brand: "Converse",
@@ -179,7 +165,6 @@ const products = [
   }),
   criarProduto({
     id: 12,
-    foto: "nike",
     name: "Nike Court Vision Low",
     price: 429.9,
     priceDiscount: 359.9,

@@ -1,5 +1,5 @@
 import Layout from "./Layout";
-import HeroBanner from "../components/HeroBanner";
+import Gallery from "../components/Gallery";
 import Section from "../components/Section";
 import CollectionCards from "../components/CollectionCards";
 import CategoryShortcuts from "../components/CategoryShortcuts";
@@ -8,53 +8,12 @@ import SpecialOffer from "../components/SpecialOffer";
 import products from "../data/products";
 import "./HomePage.css";
 
-const slides = [
-  {
-    chamada: "Melhores ofertas personalizadas",
-    titulo: "Queima de estoque Nike",
-    descricao:
-      "Modelos selecionados com preço reduzido enquanto durarem as unidades. Vale conferir antes que acabe.",
-    botao: "Ver Ofertas",
-    link: "/products?filter=nike",
-    imagem: "/produtos/nike-revolution.png",
-    alt: "Tênis Nike branco com detalhes em vermelho",
-  },
-  {
-    chamada: "Lançamento da semana",
-    titulo: "K-Swiss V8 chegou à loja",
-    descricao:
-      "Um tênis leve e confortável, pensado para quem passa o dia em pé e não abre mão do estilo.",
-    botao: "Ver Ofertas",
-    link: "/products?filter=k-swiss",
-    imagem: "/produtos/kswiss-v8.png",
-    alt: "Tênis K-Swiss V8 em branco, azul e laranja",
-  },
-  {
-    chamada: "Para o dia a dia",
-    titulo: "Casuais com até 50% de desconto",
-    descricao:
-      "Os tênis mais pedidos do momento, com parcelamento e troca facilitada em todos os pedidos.",
-    botao: "Ver Ofertas",
-    link: "/products",
-    imagem: "/produtos/nike-revolution.png",
-    alt: "Tênis Nike branco com detalhes em vermelho",
-  },
-  {
-    chamada: "Últimas unidades",
-    titulo: "Corrida e treino em promoção",
-    descricao:
-      "Amortecimento e boa aderência para treinar sem preocupação. Algumas numerações já estão acabando.",
-    botao: "Ver Ofertas",
-    link: "/products",
-    imagem: "/produtos/kswiss-v8.png",
-    alt: "Tênis K-Swiss V8 em branco, azul e laranja",
-  },
-];
+const slides = Array.from({ length: 8 }, (_, i) => ({ src: `/home-slide-${i + 1}.jpeg` }));
 
 const colecoes = [
-  { image: "/collection-1.png", alt: "Coleção Novo drop Supreme", desconto: 30, link: "/products" },
-  { image: "/collection-2.png", alt: "Coleção Adidas", desconto: 30, link: "/products?filter=adidas" },
-  { image: "/collection-3.png", alt: "Coleção Novo Beats Bass", desconto: 30, link: "/products" },
+  { image: "/collection-1.png", alt: "Coleção Novo drop Supreme", link: "/products" },
+  { image: "/collection-2.png", alt: "Coleção Adidas", link: "/products?filter=adidas" },
+  { image: "/collection-3.png", alt: "Coleção Novo Beats Bass", link: "/products" },
 ];
 
 const categorias = [
@@ -70,10 +29,10 @@ export default function HomePage() {
 
   return (
     <Layout>
-      <HeroBanner slides={slides} />
+      <Gallery images={slides} width="1440" height="681" showDots />
 
       <div className="container home__secoes">
-        <Section title="Coleções em destaque" titleAlign="left">
+        <Section title="Coleções em destaque" titleAlign="center">
           <CollectionCards collections={colecoes} />
         </Section>
 
@@ -87,8 +46,8 @@ export default function HomePage() {
       </div>
 
       <SpecialOffer
-        image="/produtos/jordan-oferta.png"
-        alt="Par de tênis Air Jordan em preto, bege e amarelo"
+        image="/home-slide-4.jpeg"
+        alt="Par de tênis Air Jordan sobre fundo cinza"
         tag="Oferta especial"
         title="Air Jordan edição de colecionador"
         text="Uma edição limitada para quem coleciona e para quem só quer um par diferente de tudo que já tem no armário. Poucas unidades disponíveis."
