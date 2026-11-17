@@ -37,7 +37,6 @@ A rota `/produtos` redireciona para `/products`, já que a documentação usa os
 - Os filtros de marca, categoria e gênero são checkboxes. Dentro de um mesmo grupo vale "ou", entre grupos vale "e". O filtro de estado usa radio.
 - O título da listagem mostra o termo buscado e o total de produtos, e muda conforme os filtros.
 - "Ordenar por" aceita menor preço e maior preço, considerando o preço com desconto quando existe.
-- O selo de desconto nos cards é calculado a partir do preço e do preço com desconto.
 - A galeria desabilita a seta da esquerda na primeira imagem e a da direita na última. Nas miniaturas, a selecionada ganha borda de 2px na cor primária.
 
 ## Estrutura
@@ -60,7 +59,7 @@ Cada componente tem o seu arquivo CSS ao lado. As cores estão como variáveis e
 
 Todas as fotos vêm da pasta `public` do repositório da Digital College:
 
-- `home-slide-1.jpeg` a `home-slide-8.jpeg`: galeria da Home (1440x681). O `home-slide-4.jpeg` também aparece recortado em círculo na seção de oferta especial.
+- `home-slide-1.jpeg` a `home-slide-8.jpeg`: galeria da Home. O `home-slide-4.jpeg` também aparece recortado em círculo na seção de oferta especial.
 - `collection-1.png` a `collection-3.png`: cards de coleções em destaque.
 - `product-thumb-1.jpeg` a `product-thumb-5.jpeg`: cards de produto (292x321).
 - `produc-image-1.jpeg` a `produc-image-5.jpeg`: galeria da página de produto (700x570).
